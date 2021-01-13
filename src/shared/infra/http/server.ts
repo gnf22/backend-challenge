@@ -1,5 +1,7 @@
 import express from 'express';
 
+import '@shared/infra/typeorm';
+
 const app = express();
 
 app.post('/', (request, response) => {
