@@ -3,6 +3,7 @@ import ICreateCountryDTO from '../dtos/ICreateCountryDTO';
 
 export default interface ICountriesDTO {
   create(data: ICreateCountryDTO): Promise<Country>;
-  findById(id: number): Promise<Country | undefined>;
   findAllCountries(): Promise<Country[]>;
+  findCountryById(id: number): Promise<Country | undefined>;
+  findCountryByName(name: string): Promise<Country | undefined>;
 }

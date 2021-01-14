@@ -25,7 +25,7 @@ class CreateTravelService {
   }
 
   public async execute({ country_id, local, meta }: IRequest): Promise<Travel> {
-    const checkCountryExists = await this.countriesRepository.findById(
+    const checkCountryExists = await this.countriesRepository.findCountryById(
       country_id,
     );
 

@@ -18,8 +18,14 @@ class CountriesRepository implements ICountriesRepository {
     return countries;
   }
 
-  public async findById(id: number): Promise<Country | undefined> {
+  public async findCountryById(id: number): Promise<Country | undefined> {
     const country = await this.ormRepository.findOne(id);
+
+    return country;
+  }
+
+  public async findCountryByName(name: string): Promise<Country | undefined> {
+    const country = await this.ormRepository.findOne({ where: { name } });
 
     return country;
   }
