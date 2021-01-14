@@ -12,7 +12,7 @@
   "servers": [
     {
       "url": "/",
-      "description": "Local Dev, or from Heroku"
+      "description": "Local Dev, or from deploy"
     }
   ],
   "tags": [
