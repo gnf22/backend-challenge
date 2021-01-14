@@ -44,6 +44,10 @@ class CountriesRepository implements ICountriesRepository {
   public async save(country: Country): Promise<Country> {
     return this.ormRepository.save(country);
   }
+
+  public async remove(id: number): Promise<void> {
+    this.ormRepository.delete(id);
+  }
 }
 
 export default CountriesRepository;

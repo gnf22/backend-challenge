@@ -7,4 +7,5 @@ export default interface ICountriesDTO {
   findCountryByName(name: string): Promise<Country | undefined>;
   create(data: ICreateCountryDTO): Promise<Country>;
   save(country: Country): Promise<Country>;
+  remove(id: number): Promise<void>;
 }

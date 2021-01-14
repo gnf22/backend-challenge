@@ -12,4 +12,6 @@ countriesRouter.get('/', countriesController.index);
 
 countriesRouter.put('/:id', countriesController.update);
 
+countriesRouter.delete('/:id', countriesController.destroy);
+
 export default countriesRouter;
