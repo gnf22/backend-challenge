@@ -5,6 +5,7 @@ import { container } from 'tsyringe';
 import CreateTravelService from '@modules/travels/services/CreateTravelService';
 import FindTravelsService from '@modules/travels/services/FindTravelsService';
 import UpdateTravelService from '@modules/travels/services/UpdateTravelService';
+import RemoveTravelService from '@modules/travels/services/RemoveTravelService';
 
 export default class TravelsController {
   async create(request: Request, response: Response): Promise<Response> {
@@ -43,5 +44,17 @@ export default class TravelsController {
     });
 
     return response.json(travel);
+  }
+
+  async destroy(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
+
+    const removeTravel = container.resolve(RemoveTravelService);
+
+    await removeTravel.execute({
+      travel_id: Number(id),
+    });
+
+    return response.json();
   }
 }

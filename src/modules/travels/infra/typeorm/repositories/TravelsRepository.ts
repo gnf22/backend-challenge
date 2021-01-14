@@ -52,6 +52,10 @@ class TravelsRepository implements ITravelsRepository {
   public async save(travel: Travel): Promise<Travel> {
     return this.ormRepository.save(travel);
   }
+
+  public async remove(id: number): Promise<void> {
+    this.ormRepository.delete(id);
+  }
 }
 
 export default TravelsRepository;

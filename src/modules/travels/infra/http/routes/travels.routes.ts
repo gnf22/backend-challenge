@@ -12,4 +12,6 @@ travelsRouter.get('/', travelsController.index);
 
 travelsRouter.put('/:id', travelsController.update);
 
+travelsRouter.delete('/:id', travelsController.destroy);
+
 export default travelsRouter;

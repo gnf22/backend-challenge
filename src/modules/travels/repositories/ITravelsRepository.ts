@@ -7,4 +7,5 @@ export default interface ITravelsRepository {
   findTravelById(id: number): Promise<Travel | undefined>;
   create(data: ICreateTravelDTO): Promise<Travel>;
   save(travel: Travel): Promise<Travel>;
+  remove(id: number): Promise<void>;
 }
