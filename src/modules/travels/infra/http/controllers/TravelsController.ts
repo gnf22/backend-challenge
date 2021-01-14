@@ -4,6 +4,7 @@ import { container } from 'tsyringe';
 
 import CreateTravelService from '@modules/travels/services/CreateTravelService';
 import FindTravelsService from '@modules/travels/services/FindTravelsService';
+import UpdateTravelService from '@modules/travels/services/UpdateTravelService';
 
 export default class TravelsController {
   async create(request: Request, response: Response): Promise<Response> {
@@ -26,5 +27,21 @@ export default class TravelsController {
     const travels = await findTravel.execute();
 
     return response.json(travels);
+  }
+
+  async update(request: Request, response: Response): Promise<Response> {
+    const { local, meta } = request.body;
+
+    const { id } = request.params;
+
+    const updateTravel = container.resolve(UpdateTravelService);
+
+    const travel = await updateTravel.execute({
+      travel_id: Number(id),
+      local,
+      meta,
+    });
+
+    return response.json(travel);
   }
 }

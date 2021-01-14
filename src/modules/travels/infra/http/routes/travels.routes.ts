@@ -10,4 +10,6 @@ travelsRouter.post('/', travelsController.create);
 
 travelsRouter.get('/', travelsController.index);
 
+travelsRouter.put('/:id', travelsController.update);
+
 export default travelsRouter;

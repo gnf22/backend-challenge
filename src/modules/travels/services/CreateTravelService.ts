@@ -30,7 +30,7 @@ class CreateTravelService {
     );
 
     if (!checkCountryExists) {
-      throw new AppError('Country ID does not exist!', 404);
+      throw new AppError('Country does not exist!', 404);
     }
 
     const checkLocalByIdExists = await this.travelsRepository.findLocalById(

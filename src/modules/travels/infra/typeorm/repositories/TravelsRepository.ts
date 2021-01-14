@@ -13,7 +13,7 @@ class TravelsRepository implements ITravelsRepository {
   }
 
   public async findAllTravels(): Promise<Travel[]> {
-    const travels = await this.ormRepository.find();
+    const travels = await this.ormRepository.find({ relations: ['country'] });
 
     return travels;
   }
@@ -23,6 +23,12 @@ class TravelsRepository implements ITravelsRepository {
     local: string,
   ): Promise<Travel | undefined> {
     const travel = this.ormRepository.findOne({ where: { country_id, local } });
+
+    return travel;
+  }
+
+  public async findTravelById(id: number): Promise<Travel | undefined> {
+    const travel = this.ormRepository.findOne(id);
 
     return travel;
   }
@@ -41,6 +47,10 @@ class TravelsRepository implements ITravelsRepository {
     await this.ormRepository.save(travel);
 
     return travel;
+  }
+
+  public async save(travel: Travel): Promise<Travel> {
+    return this.ormRepository.save(travel);
   }
 }
 
