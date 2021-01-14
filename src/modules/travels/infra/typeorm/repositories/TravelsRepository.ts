@@ -12,6 +12,12 @@ class TravelsRepository implements ITravelsRepository {
     this.ormRepository = getRepository(Travel);
   }
 
+  public async findAllTravels(): Promise<Travel[]> {
+    const travel = this.ormRepository.find({ relations: ['country'] });
+
+    return travel;
+  }
+
   public async findLocalById(
     country_id: number,
     local: string,

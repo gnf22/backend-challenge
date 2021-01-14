@@ -24,7 +24,6 @@ export default class CreateTravel1610584441760 implements MigrationInterface {
           {
             name: 'country_id',
             type: 'integer',
-            isNullable: true,
           },
           {
             name: 'created_at',
@@ -43,7 +42,7 @@ export default class CreateTravel1610584441760 implements MigrationInterface {
             columnNames: ['country_id'],
             referencedColumnNames: ['id'],
             referencedTableName: 'countries',
-            onDelete: 'SET NULL',
+            onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
         ],

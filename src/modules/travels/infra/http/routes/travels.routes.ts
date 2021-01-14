@@ -8,4 +8,6 @@ const travelsController = new TravelsController();
 
 travelsRouter.post('/', travelsController.create);
 
+travelsRouter.get('/', travelsController.show);
+
 export default travelsRouter;
