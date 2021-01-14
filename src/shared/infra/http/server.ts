@@ -1,8 +1,11 @@
 import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
+import swaggerUi from 'swagger-ui-express';
 
 import AppError from '@shared/errors/AppError';
+import * as swaggerDocument from '../../../swagger.json';
+
 import 'express-async-errors';
 import routes from './routes';
 
@@ -13,6 +16,8 @@ const app = express();
 
 app.use(express.json());
 app.use(routes);
+
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {

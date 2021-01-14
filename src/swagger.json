@@ -1,0 +1,353 @@
+{
+  "swagger": "2.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Clib",
+    "description": "A minimal and easy to follow example of what you need to create a CRUD style API in NodeJs using TypeScript",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Local Dev, or from Heroku"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Countries",
+      "description": "API for countries in the system"
+    },
+    {
+      "name": "Travels",
+      "description": "API for travels in the system"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/countries": {
+      "get": {
+        "tags": [
+          "Countries"
+        ],
+        "summary": "Get all countries in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Countries"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Countries"
+        ],
+        "summary": "Create a new country in system",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Country that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Country"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Country"
+            }
+          },
+          "400": {
+            "description": "Bad post data."
+          },
+          "409": {
+            "description": "Country already exists!"
+          }
+        }
+      }
+    },
+    "/countries/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of the country that we want to match",
+          "type": "number"
+        }
+      ],
+      "put": {
+        "summary": "Update country with given ID",
+        "tags": [
+          "Countries"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Country with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/id"
+            }
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Country with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/Country"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Country"
+            }
+          },
+          "400": {
+            "description": "Bad post data."
+          },
+          "404": {
+            "description": "Country does not exist!"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete country with given ID",
+        "tags": [
+          "Countries"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Delete Country with id",
+            "schema": {
+              "$ref": "#/definitions/id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Country"
+            }
+          },
+          "404": {
+            "description": "Country does not exist!"
+          }
+        }
+      }
+    },
+    "/travels": {
+      "get": {
+        "tags": [
+          "Travels"
+        ],
+        "summary": "Get all travels in system",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Travels"
+        ],
+        "summary": "Create a new travel in system",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Travel that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Travel"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Travel"
+            }
+          },
+          "400": {
+            "description": "Bad post data."
+          },
+          "409": {
+            "description": "This local is already chosen for this country!"
+          }
+        }
+      }
+    },
+    "/travels/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of the travel that we want to match",
+          "type": "number"
+        }
+      ],
+      "put": {
+        "summary": "Update travel with given ID",
+        "tags": [
+          "Travels"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Travel with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/id"
+            }
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "description": "Travel with new values of properties",
+            "schema": {
+              "$ref": "#/definitions/TravelUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Travel"
+            }
+          },
+          "400": {
+            "description": "Bad post data."
+          },
+          "404": {
+            "description": "Travel does not exist!"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete travel with given ID",
+        "tags": [
+          "Travels"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "Delete travel with id",
+            "schema": {
+              "$ref": "#/definitions/id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Travel does not exist!"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "properties": {
+        "id": {
+          "type": "number"
+        }
+      }
+    },
+    "Country": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        }
+      }
+    },
+    "Travel": {
+      "type": "object",
+      "properties": {
+        "country_id": {
+          "type": "number"
+        },
+        "local": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "string"
+        }
+      }
+    },
+    "TravelUpdate": {
+      "type": "object",
+      "properties": {
+        "local": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "string"
+        }
+      }
+    },
+    "Countries": {
+      "type": "object",
+      "properties": {
+        "countries": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Country"
+          }
+        }
+      }
+    },
+    "Travels": {
+      "type": "object",
+      "properties": {
+        "countries": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Travel"
+          }
+        }
+      }
+    }
+  }
+}

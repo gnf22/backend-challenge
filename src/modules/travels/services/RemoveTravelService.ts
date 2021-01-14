@@ -21,7 +21,7 @@ class RemoveTravelService {
     const travel = await this.travelsRepository.findTravelById(travel_id);
 
     if (!travel) {
-      throw new AppError('Travel does not exist!');
+      throw new AppError('Travel does not exist!', 404);
     }
 
     await this.travelsRepository.remove(travel_id);

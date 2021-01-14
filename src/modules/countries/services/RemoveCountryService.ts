@@ -20,7 +20,7 @@ class RemoveCountryService {
     const country = await this.countriesRepository.findCountryById(country_id);
 
     if (!country) {
-      throw new AppError('Country does not exist!');
+      throw new AppError('Country does not exist!', 404);
     }
 
     await this.countriesRepository.remove(country_id);

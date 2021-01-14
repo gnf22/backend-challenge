@@ -89,7 +89,7 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
-"@types/express@^4.17.11":
+"@types/express@*", "@types/express@^4.17.11":
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.11.tgz#debe3caa6f8e5fcda96b47bd54e2f40c4ee59545"
   integrity sha512-no+R6rW60JEc59977wIxreQVsIEOAYwgCqldrA/vkpCnbD7MqTefO97lmoBe4WE0F156bC4uLSP1XHDOySnChg==
@@ -146,6 +146,14 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
+
+"@types/swagger-ui-express@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@types/swagger-ui-express/-/swagger-ui-express-4.1.2.tgz#cfc884904a104c3193f46f423d04ee0416be1ef4"
+  integrity sha512-t9teFTU8dKe69rX9EwL6OM2hbVquYdFM+sQ0REny4RalPlxAm+zyP04B12j4c7qEuDS6CnlwICywqWStPA3v4g==
+  dependencies:
+    "@types/express" "*"
+    "@types/serve-static" "*"
 
 "@typescript-eslint/eslint-plugin@^4.13.0":
   version "4.13.0"
@@ -1296,6 +1304,11 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
+install@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/install/-/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+  integrity sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==
+
 ipaddr.js@1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.9.1.tgz#bff38543eeb8984825079ff3a2a8e6cbd46781b3"
@@ -2347,6 +2360,18 @@ supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
+
+swagger-ui-dist@^3.18.1:
+  version "3.39.0"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-3.39.0.tgz#94fcd76316cc9925a77d41fdbfdfdccd6fa1a0a6"
+  integrity sha512-mNCdhxMvYH0E96ebDX5LL3Yj8zMqC/HFAN5YDjwYxuetEewZ6onBrBBSJsWcl6vCxbEbtS2qBiy9OtBY+YyndQ==
+
+swagger-ui-express@^4.1.6:
+  version "4.1.6"
+  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.1.6.tgz#682294af3d5c70f74a1fa4d6a9b503a9ee55ea82"
+  integrity sha512-Xs2BGGudvDBtL7RXcYtNvHsFtP1DBFPMJFRxHe5ez/VG/rzVOEjazJOOSc/kSCyxreCTKfJrII6MJlL9a6t8vw==
+  dependencies:
+    swagger-ui-dist "^3.18.1"
 
 table@^6.0.4:
   version "6.0.7"

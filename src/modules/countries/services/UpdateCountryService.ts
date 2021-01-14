@@ -28,7 +28,7 @@ class UpdateCountryService {
     const country = await this.countriesRepository.findCountryById(country_id);
 
     if (!country) {
-      throw new AppError('Country does not exists!');
+      throw new AppError('Country does not exists!', 404);
     }
 
     country.name = name;

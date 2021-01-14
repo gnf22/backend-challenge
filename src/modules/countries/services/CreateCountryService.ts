@@ -25,7 +25,7 @@ class CreateCountryService {
     );
 
     if (checkCountryNameExists) {
-      throw new AppError('Country already exists!');
+      throw new AppError('Country already exists!', 409);
     }
 
     const country = await this.countriesRepository.create({
