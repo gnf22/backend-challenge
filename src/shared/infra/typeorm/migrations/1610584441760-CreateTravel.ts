@@ -18,8 +18,12 @@ export default class CreateTravel1610584441760 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'meta',
-            type: 'varchar',
+            name: 'month',
+            type: 'integer',
+          },
+          {
+            name: 'year',
+            type: 'integer',
           },
           {
             name: 'country_id',

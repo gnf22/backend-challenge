@@ -19,7 +19,10 @@ class Travel {
   local: string;
 
   @Column()
-  meta: string;
+  month: number;
+
+  @Column()
+  year: number;
 
   @Column()
   country_id: number;

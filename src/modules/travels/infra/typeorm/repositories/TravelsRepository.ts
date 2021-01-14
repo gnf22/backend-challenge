@@ -13,7 +13,10 @@ class TravelsRepository implements ITravelsRepository {
   }
 
   public async findAllTravels(): Promise<Travel[]> {
-    const travels = await this.ormRepository.find({ relations: ['country'] });
+    const travels = await this.ormRepository.find({
+      relations: ['country'],
+      order: { year: 'ASC' },
+    });
 
     return travels;
   }
@@ -36,12 +39,14 @@ class TravelsRepository implements ITravelsRepository {
   public async create({
     country_id,
     local,
-    meta,
+    month,
+    year,
   }: ICreateTravelDTO): Promise<Travel> {
     const travel = this.ormRepository.create({
       country_id,
       local,
-      meta,
+      month,
+      year,
     });
 
     await this.ormRepository.save(travel);

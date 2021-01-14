@@ -27,9 +27,6 @@ class UpdateTravelService {
       throw new AppError('Travel does not exist!');
     }
 
-    travel.local = local;
-    travel.meta = meta;
-
     const checkLocalByIdExists = await this.travelsRepository.findLocalById(
       travel_id,
       local,
@@ -38,6 +35,14 @@ class UpdateTravelService {
     if (checkLocalByIdExists) {
       throw new AppError('This local is already chosen for this country!');
     }
+
+    const month = Number(meta.substring(0, 2));
+
+    const year = Number(meta.substring(3, 7));
+
+    travel.local = local;
+    travel.month = month;
+    travel.year = year;
 
     return this.travelsRepository.save(travel);
   }
