@@ -12,6 +12,12 @@ class CountriesRepository implements ICountriesRepository {
     this.ormRepository = getRepository(Country);
   }
 
+  public async findById(id: number): Promise<Country | undefined> {
+    const country = await this.ormRepository.findOne(id);
+
+    return country;
+  }
+
   public async create({
     name,
     image_url,
