@@ -1,11 +1,17 @@
+import AppError from '@shared/errors/AppError';
 import FakeCountriesRepository from '../repositories/fakes/FakeCountriesRepository';
 import CreateCountryService from './CreateCountryService';
 
-describe('CreateCountry', () => {
-  it('should be able to create a new country', async () => {
-    const fakeCountriesRepository = new FakeCountriesRepository();
-    const createCountry = new CreateCountryService(fakeCountriesRepository);
+let fakeCountriesRepository: FakeCountriesRepository;
+let createCountry: CreateCountryService;
 
+describe('CreateCountry', () => {
+  beforeEach(() => {
+    fakeCountriesRepository = new FakeCountriesRepository();
+    createCountry = new CreateCountryService(fakeCountriesRepository);
+  });
+
+  it('should be able to create a new country', async () => {
     const country = await createCountry.execute({
       name: 'Brasil',
       image_url: 'https://brasil.svg',
@@ -15,7 +21,17 @@ describe('CreateCountry', () => {
     expect(country.name).toBe('Brasil');
   });
 
-  // it('should not be able to create two countries with the same name', () => {
-  //   expect(1 + 2).toBe(3);
-  // });
+  it('should not be able to create two countries with the same name', async () => {
+    await createCountry.execute({
+      name: 'Brasil',
+      image_url: 'https://brasil.svg',
+    });
+
+    expect(
+      createCountry.execute({
+        name: 'Brasil',
+        image_url: 'https://brasil.svg',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
 });
