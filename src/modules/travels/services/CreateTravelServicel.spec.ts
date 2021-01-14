@@ -18,13 +18,13 @@ describe('CreateTravel', () => {
   });
 
   it('should be able to create a new travel', async () => {
-    const country = fakeCountriesRepository.create({
+    const country = await fakeCountriesRepository.create({
       name: 'Brasil',
       image_url: 'https://www.images.com/brasil.svg',
     });
 
     const travel = await createTravel.execute({
-      country_id: (await country).id,
+      country_id: country.id,
       local: 'São Paulo',
       meta: '04/2021',
     });

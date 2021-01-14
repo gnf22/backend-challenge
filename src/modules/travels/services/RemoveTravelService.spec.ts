@@ -8,7 +8,7 @@ let fakeTravelsRepository: FakeTravelsRepository;
 let fakeCountriesRepository: FakeCountriesRepository;
 let removeTravel: RemoveTravelService;
 
-describe('FindTravels', () => {
+describe('RemoveTravel', () => {
   beforeEach(() => {
     fakeTravelsRepository = new FakeTravelsRepository();
     fakeCountriesRepository = new FakeCountriesRepository();
