@@ -5,7 +5,7 @@ import Country from '../infra/typeorm/entities/Country';
 import ICountriesRepository from '../repositories/ICountriesRepository';
 
 @injectable()
-class CreateCountryService {
+class FindCountriesService {
   constructor(
     @inject('CountriesRepository')
     private countriesRepository: ICountriesRepository,
@@ -20,4 +20,4 @@ class CreateCountryService {
   }
 }
 
-export default CreateCountryService;
+export default FindCountriesService;

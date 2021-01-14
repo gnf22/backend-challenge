@@ -5,7 +5,7 @@ import Travel from '../infra/typeorm/entities/Travel';
 import ITravelsRepository from '../repositories/ITravelsRepository';
 
 @injectable()
-class CreateTravelService {
+class FindTravelsService {
   constructor(
     @inject('TravelsRepository')
     private travelsRepository: ITravelsRepository,
@@ -20,4 +20,4 @@ class CreateTravelService {
   }
 }
 
-export default CreateTravelService;
+export default FindTravelsService;

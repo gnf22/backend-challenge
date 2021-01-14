@@ -8,6 +8,8 @@ const countriesController = new CountriesController();
 
 countriesRouter.post('/', countriesController.create);
 
-countriesRouter.get('/', countriesController.show);
+countriesRouter.get('/', countriesController.index);
+
+countriesRouter.put('/:id', countriesController.update);
 
 export default countriesRouter;

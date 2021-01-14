@@ -40,6 +40,10 @@ class CountriesRepository implements ICountriesRepository {
 
     return country;
   }
+
+  public async save(country: Country): Promise<Country> {
+    return this.ormRepository.save(country);
+  }
 }
 
 export default CountriesRepository;

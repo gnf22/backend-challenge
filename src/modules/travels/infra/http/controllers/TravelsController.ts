@@ -20,7 +20,7 @@ export default class TravelsController {
     return response.json(travel);
   }
 
-  async show(request: Request, response: Response): Promise<Response> {
+  async index(request: Request, response: Response): Promise<Response> {
     const findTravel = container.resolve(FindTravelsService);
 
     const travels = await findTravel.execute();
