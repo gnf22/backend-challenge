@@ -3,4 +3,5 @@ import ICreateTravelDTO from '../dtos/ICreateTravelDTO';
 
 export default interface ITravelsRepository {
   create(data: ICreateTravelDTO): Promise<Travel>;
+  findLocalById(country_id: number, local: string): Promise<Travel | undefined>;
 }
