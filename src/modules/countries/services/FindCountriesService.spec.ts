@@ -4,13 +4,13 @@ import FindCountriesService from './FindCountriesService';
 let fakeCountriesRepository: FakeCountriesRepository;
 let findCountry: FindCountriesService;
 
-describe('FindCountry', () => {
+describe('FindCountries', () => {
   beforeEach(() => {
     fakeCountriesRepository = new FakeCountriesRepository();
     findCountry = new FindCountriesService(fakeCountriesRepository);
   });
 
-  it('should be able to list the countries', async () => {
+  it('should be able to list all countries', async () => {
     const country1 = await fakeCountriesRepository.create({
       name: 'Brasil',
       image_url: 'https://www.images.com/brasil.svg',
