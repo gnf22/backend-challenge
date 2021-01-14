@@ -5,7 +5,7 @@ import UpdateCountryService from './UpdateCountryService';
 let fakeCountriesRepository: FakeCountriesRepository;
 let updateCountry: UpdateCountryService;
 
-describe('CreateCountry', () => {
+describe('UpdateCountry', () => {
   beforeEach(() => {
     fakeCountriesRepository = new FakeCountriesRepository();
     updateCountry = new UpdateCountryService(fakeCountriesRepository);

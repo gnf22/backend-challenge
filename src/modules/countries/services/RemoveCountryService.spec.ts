@@ -5,7 +5,7 @@ import RemoveCountryService from './RemoveCountryService';
 let fakeCountriesRepository: FakeCountriesRepository;
 let removeCountry: RemoveCountryService;
 
-describe('CreateCountry', () => {
+describe('RemoveCountry', () => {
   beforeEach(() => {
     fakeCountriesRepository = new FakeCountriesRepository();
     removeCountry = new RemoveCountryService(fakeCountriesRepository);
