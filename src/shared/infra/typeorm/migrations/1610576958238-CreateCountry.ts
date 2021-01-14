@@ -10,6 +10,7 @@ export default class CreateCountry1610576958238 implements MigrationInterface {
             name: 'id',
             type: 'integer',
             isPrimary: true,
+            isGenerated: true,
             generationStrategy: 'increment',
           },
           {
