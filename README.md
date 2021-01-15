@@ -41,7 +41,7 @@ Este desafio tem como objetivo avaliar as habilidades técnicas do candidato a v
 
 O desafio consiste em desenvolver uma API rest que permita o CRUD de lugares para se conhecer ao redor do mundo para alimentar o frontend que pode ser visto na imagem a seguir:
 
-#### Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 Este projeto utiliza as seguintes tecnologias:
 
@@ -55,14 +55,14 @@ Este projeto utiliza as seguintes tecnologias:
 -  [Eslint](https://github.com/eslint/eslint)
 -  [Prettier](https://github.com/prettier/prettier)
 
-#### Configurando o Banco
+## Configurando o Banco
 1. Na pasta raíz do projeto, você deve criar um arquivo .env com as seguintes variáveis como no exemplo abaixo, realizando a configuração de acordo com suas credenciais. (Necessário ser um banco postgres)
 
 <img src="./img/env-example.png" style="margin-left: 100px"
      alt="Clubpetro" width="300">
 
      
-#### Iniciando o Projeto
+## Iniciando o Projeto
 
 1. Para conseguir executar o projeto em ambiente de desenvolvimento, siga os seguintes passos:
 ```bash
@@ -79,7 +79,7 @@ yarn dev:server
 3. Para visualizar as rotas disponíveis na aplicação, há uma documentação desenvolvida com o Swagger, acesse http://localhost:8080/api
 
 
-#### Executando testes
+## Executando testes
 1. Para executar os testes no projeto, siga os seguintes passos:
 ```bash
 # Execute o script de testes
@@ -88,7 +88,7 @@ yarn test
 
 2. Você pode visualizar uma interface amigável com os resultados dos testes acessando coverage/lcov-report/index.html
 
-#### Deploy no Google Cloud
+## Deploy no Google Cloud
 1. O link para acesso ao deploy é: https://last-test-301801.rj.r.appspot.com
 
 2. Para visualizar as rotas disponíveis na aplicação, acesse https://last-test-301801.rj.r.appspot.com/api
