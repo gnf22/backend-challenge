@@ -6,8 +6,32 @@
 - [Descrição](#descrição)
   - [O Desafio](#o-desafio)
   - [Requisitos Obrigatórios](#requisitos-obrigatórios)
-  - [Bônus](#bônus)
-- [Submissão e Prazo de Entrega](#submissão-e-prazo-de-entrega)
+  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Configurando o Banco](#configurando-o-banco)
+  - [Iniciando o Projeto](#iniciando-o-projeto)
+  - [Executando testes](#executando-testes)
+  - [Deploy no Google Cloud](#deploy-no-google-cloud)
+  
+  
+ <p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gnf22/backend-challenge.svg">
+
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gnf22/backend-challenge.svg">
+
+
+  <img alt="Repository size" src="https://img.shields.io/github/languages/code-size/gnf22/backend-challenge.svg">
+  
+  <a href="https://github.com/gnf22/dsdeliver-sds2/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gnf22/backend-challenge.svg">
+  </a>
+
+  <a href="https://github.com/gnf22/dsdeliver-sds2/commits/master">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/gnf22/backend-challenge.svg">
+  </a>
+
+  <img alt="GitHub" src="https://img.shields.io/github/license/gnf22/backend-challenge.svg">
+</p>
+
 
 ## Descrição
 
@@ -17,41 +41,54 @@ Este desafio tem como objetivo avaliar as habilidades técnicas do candidato a v
 
 O desafio consiste em desenvolver uma API rest que permita o CRUD de lugares para se conhecer ao redor do mundo para alimentar o frontend que pode ser visto na imagem a seguir:
 
-<img src="./img/challenge.png" alt="Desafio" >
+## Tecnologias Utilizadas
 
-Os dados a ser considerados são:
+Este projeto utiliza as seguintes tecnologias:
 
-- País: O país escolhido;
-- Local: O local dentro do país escolhido;
-- Meta: O mês e o ano que o usuário pretende visitar o local;
-- Url da bandeira do país;
-- Data de criação do registro;
-- Data de atualização do registro.
+-  [NodeJS](https://github.com/nodejs/node)
+-  [Express](https://github.com/expressjs/express)
+-  [TypeORM](https://github.com/typeorm/typeorm)
+-  [SwaggerUI](https://github.com/swagger-api/swagger-ui)
+-  [Jest](https://github.com/facebook/jest)
+-  [Tsyringe](https://github.com/microsoft/tsyringe)
+-  [Typescript](https://github.com/microsoft/TypeScript)
+-  [Eslint](https://github.com/eslint/eslint)
+-  [Prettier](https://github.com/prettier/prettier)
 
-#### Requisitos Obrigatórios
+## Configurando o Banco
+1. Na pasta raíz do projeto, você deve criar um arquivo .env com as seguintes variáveis como no exemplo abaixo, realizando a configuração de acordo com suas credenciais. (Necessário ser um banco postgres)
 
-> Requisitos que serão avaliados no desafio.
+<img src="./img/env-example.png" style="margin-left: 100px"
+     alt="Clubpetro" width="300">
 
-- A API deverá ser desenvolvida com Node.js e Express;
-- Apenas o Local e a Meta poderão ser editados;
-- O mesmo local em determinado país não poderá ser adicionado de forma duplicada;
-- A listagem dos dados deverá ser ordenada de forma crescente pela meta;
-- O candidato deverá adicionar ao projeto uma explicação de como executar a aplicação.
+     
+## Iniciando o Projeto
 
-#### Bônus
+1. Para conseguir executar o projeto em ambiente de desenvolvimento, siga os seguintes passos:
+```bash
+# Instale as dependências
+yarn
+# Rode as migrations
+yarn typeorm migration:run
+# Execute o projeto
+yarn dev:server
+```
 
-> Requisitos que não são obrigatórios mas podem te deixar em vantagem com relação aos outros candidatos.
+2. O projeto estará disponível em http://localhost:8080
 
-- Utilização do framework [NestJS](https://nestjs.com/);
-- Typescript;
-- Testes automatizados;
-- [TypeORM](https://typeorm.io/#/);
-- [Docker](https://www.docker.com/);
-- Deploy para [Google Cloud Platform](https://cloud.google.com/) (ao criar conta é possível receber um bonus para teste).
+3. Para visualizar as rotas disponíveis na aplicação, há uma documentação desenvolvida com o Swagger, acesse http://localhost:8080/api
 
-### Submissão e Prazo de entrega
 
-- O candidato deverá realizar um fork deste repositório e submeter o código no mesmo.
-- Em caso do deploy realizado, a url deverá ser adicionada no README;
-- O prazo de entrega para este desafio é de 2 (duas) semanas, contando a partir do dia em que o canditado recebeu o email com o link do repositório;
-- Ao finalizar o desafio, o candidato deverá enviar um email para jobs@clubpetro.com.br contendo o link do seu PR.
+## Executando testes
+1. Para executar os testes no projeto, siga os seguintes passos:
+```bash
+# Execute o script de testes
+yarn test
+```
+
+2. Você pode visualizar uma interface amigável com os resultados dos testes acessando coverage/lcov-report/index.html
+
+## Deploy no Google Cloud
+1. O link para acesso ao deploy é: https://last-test-301801.rj.r.appspot.com
+
+2. Para visualizar as rotas disponíveis na aplicação, acesse https://last-test-301801.rj.r.appspot.com/api
