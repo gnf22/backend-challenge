@@ -25,12 +25,12 @@ describe('CreateTravel', () => {
 
     const travel = await createTravel.execute({
       country_id: country.id,
-      local: 'São Paulo',
+      local: 'Santos',
       meta: '04/2021',
     });
 
     expect(travel).toHaveProperty('id');
-    expect(travel.local).toBe('São Paulo');
+    expect(travel.local).toBe('Santos');
   });
 
   it('should not be able to create a travel with a country that does not exist', async () => {
