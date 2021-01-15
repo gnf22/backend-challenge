@@ -1,6 +1,9 @@
 import 'reflect-metadata';
+import 'dotenv/config';
+import cors from 'cors';
 
 import express, { Request, Response, NextFunction } from 'express';
+
 import swaggerUi from 'swagger-ui-express';
 
 import AppError from '@shared/errors/AppError';
@@ -14,6 +17,7 @@ import '@shared/container';
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
@@ -35,4 +39,4 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(3333, () => console.log('Server started at port 3333'));
+app.listen(8080, () => console.log('Server started at port 8080'));
