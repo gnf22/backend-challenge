@@ -2,8 +2,8 @@
   "swagger": "2.0.0",
   "info": {
     "version": "1.0.0",
-    "title": "Clib",
-    "description": "A minimal and easy to follow example of what you need to create a CRUD style API in NodeJs using TypeScript",
+    "title": "ClubPetro Backend Challenge",
+    "description": "A CRUD projet developed using NodeJS and Express",
     "license": {
       "name": "MIT",
       "url": "https://opensource.org/licenses/MIT"
