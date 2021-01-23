@@ -34,7 +34,7 @@ describe('CreateTravel', () => {
   });
 
   it('should not be able to create a travel with a country that does not exist', async () => {
-    expect(
+    await expect(
       createTravel.execute({
         country_id: 1,
         local: 'Santa Vitória do Palmar',
@@ -55,7 +55,7 @@ describe('CreateTravel', () => {
       meta: '06/2021',
     });
 
-    expect(
+    await expect(
       createTravel.execute({
         country_id: country.id,
         local: 'Curitiba',
@@ -70,7 +70,7 @@ describe('CreateTravel', () => {
       image_url: 'https://www.images.com/brasil.svg',
     });
 
-    expect(
+    await expect(
       createTravel.execute({
         country_id: country.id,
         local: 'Blumenau',

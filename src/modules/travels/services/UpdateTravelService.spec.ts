@@ -66,7 +66,7 @@ describe('UpdateTravel', () => {
       year: 2026,
     });
 
-    expect(
+    await expect(
       updateTravel.execute({
         travel_id: travel1.id,
         local: 'Ipatinga',
@@ -88,7 +88,7 @@ describe('UpdateTravel', () => {
       year: 2021,
     });
 
-    expect(
+    await expect(
       updateTravel.execute({
         travel_id: travel1.id,
         local: 'Belém',

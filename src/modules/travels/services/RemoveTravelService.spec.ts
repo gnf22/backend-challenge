@@ -38,7 +38,7 @@ describe('RemoveTravel', () => {
   });
 
   it('should not be able to remove a travel that does not exist', async () => {
-    expect(
+    await expect(
       removeTravel.execute({
         travel_id: 1,
       }),
