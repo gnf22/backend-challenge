@@ -27,7 +27,7 @@ describe('CreateCountry', () => {
       image_url: 'https://brasil.svg',
     });
 
-    expect(
+    await expect(
       createCountry.execute({
         name: 'Brasil',
         image_url: 'https://brasil.svg',

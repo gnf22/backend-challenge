@@ -31,6 +31,14 @@ class UpdateCountryService {
       throw new AppError('Country does not exists!', 404);
     }
 
+    const checkCountryExists = await this.countriesRepository.findCountryByName(
+      name,
+    );
+
+    if (checkCountryExists && checkCountryExists.id !== country_id) {
+      throw new AppError('Country already exists!');
+    }
+
     country.name = name;
 
     country.image_url = image_url;

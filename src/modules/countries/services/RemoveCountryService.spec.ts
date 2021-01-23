@@ -27,7 +27,7 @@ describe('RemoveCountry', () => {
   });
 
   it('should not be able to remove a country that doest not exist', async () => {
-    expect(
+    await expect(
       removeCountry.execute({
         country_id: 1,
       }),

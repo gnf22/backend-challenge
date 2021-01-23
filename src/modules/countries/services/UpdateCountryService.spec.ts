@@ -27,10 +27,30 @@ describe('UpdateCountry', () => {
   });
 
   it('should not be able to update a country that doest not exist', async () => {
-    expect(
+    await expect(
       updateCountry.execute({
         country_id: 1,
         name: 'México',
+        image_url: 'https://www.images.com/bra.svg',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('should not be able to update a country already used', async () => {
+    await fakeCountriesRepository.create({
+      name: 'Paraguai',
+      image_url: 'https://www.images.com/par.svg',
+    });
+
+    const country = await fakeCountriesRepository.create({
+      name: 'Chile',
+      image_url: 'https://www.images.com/chi.svg',
+    });
+
+    await expect(
+      updateCountry.execute({
+        country_id: country.id,
+        name: 'Paraguai',
         image_url: 'https://www.images.com/bra.svg',
       }),
     ).rejects.toBeInstanceOf(AppError);
