@@ -10,7 +10,6 @@
   - [Configurando o Banco](#configurando-o-banco)
   - [Iniciando o Projeto](#iniciando-o-projeto)
   - [Executando testes](#executando-testes)
-  - [Deploy no Google Cloud](#deploy-no-google-cloud)
   
   
  <p align="center">
@@ -88,7 +87,3 @@ yarn test
 
 2. Você pode visualizar uma interface amigável com os resultados dos testes acessando coverage/lcov-report/index.html
 
-## Deploy no Google Cloud
-1. O link para acesso ao deploy é: https://last-test-301801.rj.r.appspot.com
-
-2. Para visualizar as rotas disponíveis na aplicação, acesse https://last-test-301801.rj.r.appspot.com/api
